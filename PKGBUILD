@@ -24,8 +24,7 @@ makedepends=(
   libxtst
   openssl
   wl-clipboard
-  wxwidgets-common
-  wxwidgets-gtk3
+  wxwidgets
   xclip
   xdotool
 )
@@ -89,8 +88,7 @@ package_espanso-wayland() {
     libxkbcommon
     openssl
     wl-clipboard
-    wxwidgets-common
-    wxwidgets-gtk3
+    wxwidgets
   )
   provides=(espanso)
   conflicts=(espanso)
