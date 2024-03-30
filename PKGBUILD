@@ -79,37 +79,6 @@ check() {
     --skip tests::test_migration
 }
 
-package_espanso-x11() {
-  pkgdesc+=" (built for X11)"
-  depends=(
-    bzip2
-    dbus
-    gcc-libs
-    glibc
-    libx11
-    libxcb
-    libxkbcommon
-    libxtst
-    openssl
-    wxwidgets-common
-    wxwidgets-gtk3
-    xclip
-    xdotool
-  )
-  provides=(espanso)
-  conflicts=(espanso)
-  replaces=(espanso)
-
-  cd "$_archive"
-
-  install -Dm755 -t "$pkgdir/usr/bin" target-x11/release/espanso
-  install -Dm644 -t "$pkgdir/usr/lib/systemd/user" espanso.service
-  install -Dm644 -t "$pkgdir/usr/share/applications" espanso.desktop
-  install -Dm644 -t "$pkgdir/usr/share/doc/espanso" ./*.md
-  install -Dm644 espanso/src/res/linux/icon.png \
-    "$pkgdir/usr/share/pixmaps/espanso.png"
-}
-
 package_espanso-wayland() {
   pkgdesc="$pkgdesc (built for Wayland)"
   depends=(
